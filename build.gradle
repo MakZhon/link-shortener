@@ -8,11 +8,16 @@ group = 'org.zhenmax'
 version = '1.0-SNAPSHOT'
 
 repositories {
+    mavenLocal()
     mavenCentral()
 }
 
 dependencies {
     implementation "org.springframework.boot:spring-boot-starter-web"
+    implementation 'org.projectlombok:lombok'
     compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
     implementation 'org.apache.commons:commons-lang3:3.14.0'
+    implementation 'org.zhenmax:logging-starter-maven:1.0-SNAPSHOT'
+    implementation 'org.zhenmax:logging-starter-gradle:1.0-SNAPSHOT'
 }

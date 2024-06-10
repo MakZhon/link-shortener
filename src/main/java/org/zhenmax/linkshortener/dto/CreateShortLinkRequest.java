@@ -9,8 +9,8 @@ import java.time.ZonedDateTime;
 
 @Getter
 @Setter
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 public class CreateShortLinkRequest {
 
     private String link;
@@ -20,5 +20,6 @@ public class CreateShortLinkRequest {
     private String description;
 
     private Boolean active;
+
 }
 
