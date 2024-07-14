@@ -16,7 +16,7 @@ import java.time.ZonedDateTime;
 @SpringBootApplication
 public class LinkShortenerApp {
     @Autowired
-    @Qualifier("linkInfoServiceProxy")
+    @Qualifier("linkInfoService")
     private LinkInfoService linkInfoServiceProxy;
 
     @PostConstruct

@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
+import org.zhenmax.linkshortener.beanpostprocessor.LogExecutionTime;
 import org.zhenmax.linkshortener.dto.CreateShortLinkRequest;
 import org.zhenmax.linkshortener.exceptions.NotFoundException;
 import org.zhenmax.linkshortener.model.LinkInfo;
@@ -25,6 +26,7 @@ public class LinkInfoServiceImpl implements LinkInfoService {
     }
 
     @Override
+    @LogExecutionTime
     public LinkInfo createLinkInfo(CreateShortLinkRequest request) {
         LinkInfo linkInfo = new LinkInfo();
         linkInfo.setLink(request.getLink());
@@ -36,6 +38,7 @@ public class LinkInfoServiceImpl implements LinkInfoService {
     }
 
     @Override
+    @LogExecutionTime
     public LinkInfo getByShortLink(String shortLink) {
         return linkInfoRepository.findByShortLink(shortLink)
                 .orElseThrow(() -> new NotFoundException(
